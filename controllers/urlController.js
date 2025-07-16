@@ -52,7 +52,7 @@ exports.updateURL = async (req, res) => {
     found.url = url;
     await found.save();
 
-    res.status(200).json({ shortCode: code, updated: true });
+    res.status(200).json( found );
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
